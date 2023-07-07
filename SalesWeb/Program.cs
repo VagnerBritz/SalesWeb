@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using SalesWeb.Data;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<SalesWebContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("SalesWebContext") ?? throw new InvalidOperationException("Connection string 'SalesWebContext' not found.")));
-builder.Services.AddScoped<SeedingService>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -18,11 +18,6 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-using (var serviceScope = app.Services.GetService<IServiceScopeFactory>().CreateScope())
-{
-    var seedService = serviceScope.ServiceProvider.GetRequiredService<SeedingService>();
-    seedService.Seed();
-}
 //app.UseHttpsRedirection();
 app.UseStaticFiles();
 
