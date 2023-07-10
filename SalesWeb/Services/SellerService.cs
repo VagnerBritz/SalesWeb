@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SalesWeb.Data;
 using SalesWeb.Models;
-using System.ComponentModel.DataAnnotations;
+using SalesWeb.Services.Exceptions;
 
 #nullable disable
 namespace SalesWeb.Services
@@ -33,6 +33,22 @@ namespace SalesWeb.Services
             var obj = _context.Seller.Find(id);
             _context.Seller.Remove(obj);
             _context.SaveChanges();
+        }
+        public void Update(Seller obj)
+        {
+            if (!_context.Seller.Any(x => x.Id == obj.Id))
+            {
+                throw new NotFoundExceptions("Id não encontrado");
+            }
+            try
+            {
+            _context.Update(obj);
+            _context.SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException e)
+            {
+                throw new DbConcurrencyExceptions(e.Message);
+            }
         }
     }
 }
