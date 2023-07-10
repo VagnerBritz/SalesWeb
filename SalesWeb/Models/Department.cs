@@ -1,5 +1,7 @@
 ﻿namespace SalesWeb.Models
 {
+#nullable disable
+
     public class Department
     {
         public int Id { get; set; }

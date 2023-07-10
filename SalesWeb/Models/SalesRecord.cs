@@ -1,5 +1,7 @@
 ﻿using SalesWeb.Models.Enums;
 
+#nullable disable
+
 namespace SalesWeb.Models
 {
     public class SalesRecord

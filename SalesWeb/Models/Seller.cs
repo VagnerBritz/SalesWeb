@@ -1,5 +1,7 @@
 ﻿namespace SalesWeb.Models
 {
+#nullable disable
+
     public class Seller
     {
         public int Id { get; set; }
@@ -13,7 +15,7 @@
         public Seller()
         {
         }
-        public Seller(string name, string email, double baseSalary, DateTime date, Department department)
+        public Seller(string name, string email, DateTime date, double baseSalary, Department department)
         {            
             Name = name;
             Email = email;
