@@ -5,21 +5,20 @@
         public int Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
+        public DateTime Date { get; set; }
         public double BaseSalary { get; set; }
-        public DateTime BirthDay { get; set; }
         public Department Department { get; set; }
         public ICollection<SalesRecord> Sales { get; set; } = new List<SalesRecord>();
 
         public Seller()
         {
         }
-        public Seller(int id, string name, string email, double baseSalary, DateTime birthDay, Department department)
-        {
-            Id = id;
+        public Seller(string name, string email, double baseSalary, DateTime date, Department department)
+        {            
             Name = name;
             Email = email;
             BaseSalary = baseSalary;
-            BirthDay = birthDay;
+            Date = date;
             Department = department;
         }
         public void AddSales(SalesRecord sr) 
