@@ -16,6 +16,8 @@ builder.Services.AddDbContext<SalesWebContext>(options =>
 // Registrando o serviço de semeadura
 builder.Services.AddScoped<SeedingService>();
 builder.Services.AddScoped<SellerService>();
+builder.Services.AddScoped<DepartmentService>();
+
 
 // Adicionar controladores e visualizações aos serviços
 builder.Services.AddControllersWithViews();
