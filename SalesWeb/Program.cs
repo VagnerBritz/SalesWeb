@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using SalesWeb.Data;
+using SalesWeb.Services;
 using SalesWebMvc.Data;
 
 #nullable disable
@@ -14,6 +15,7 @@ builder.Services.AddDbContext<SalesWebContext>(options =>
 // Add services to the container.
 // Registrando o serviço de semeadura
 builder.Services.AddScoped<SeedingService>();
+builder.Services.AddScoped<SellerService>();
 
 // Adicionar controladores e visualizações aos serviços
 builder.Services.AddControllersWithViews();
