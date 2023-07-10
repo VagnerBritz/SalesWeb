@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
 using SalesWeb.Data;
 using SalesWeb.Services;
 using SalesWebMvc.Data;
@@ -42,6 +43,19 @@ if (app.Environment.IsDevelopment())
         seedService.Seed();
     }
 }
+
+// Define a localização padrão da aplicação 
+var ptBrazil = new CultureInfo("pt-BR");
+var eua = new CultureInfo("en-US");
+
+var localizationOptions = new RequestLocalizationOptions
+{
+    DefaultRequestCulture = new RequestCulture(ptBrazil),
+    SupportedCultures = new List<CultureInfo> { ptBrazil },
+    SupportedUICultures = new List<CultureInfo> { ptBrazil }
+};
+
+app.UseRequestLocalization(localizationOptions);
 
 //app.UseHttpsRedirection();
 app.UseStaticFiles();
