@@ -61,7 +61,7 @@ namespace SalesWeb.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> Delete(int id) // não será possível, neste contexto excluir o vendedor pois ele tem a si associado uma lista de vendas.
         {
             try
             {
