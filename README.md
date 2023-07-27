@@ -3,6 +3,7 @@
 
   Bem-vindo ao repositório do projeto SalesWeb! Este é um aplicativo ASP.NET Core MVC desenvolvido durante o curso "C# COMPLETO Programação Orientada a Objetos + Projetos" ministrado pelo Prof. Nélio Alves. O SalesWeb é um gerenciador de vendas que permite cadastrar vendedores, departamentos e consultar vendas previamente cadastradas.
 ### Layout Web
+![gifmaker_me (3)](https://github.com/VagnerBritz/SalesWeb/assets/84142194/f1e35da6-0762-4313-8718-787db0f926e9)
 ## Tecnologias e recursos utilizados
 O projeto foi desenvolvido utilizando as seguintes tecnologias e recursos:
 - Aspnet Core MVC 6.0 com c#
