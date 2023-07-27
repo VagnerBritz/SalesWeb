@@ -1,12 +1,11 @@
 ﻿@model SalesWeb.Models.Seller;
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Informações do Vendedor";
 }
 
 <h2>@ViewData["Title"]</h2>
 
 <div>
-    <h4>Seller</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -42,6 +41,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-default">Editar</a>
-    <a asp-action="Index">Voltar à listagem</a>
+    <a asp-action="Editar" asp-route-id="@Model.Id" class="btn btn-default">Editar</a>
+    <a asp-action="Index" class="btn btn-primary">Voltar à lista</a>
 </div>

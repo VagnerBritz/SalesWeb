@@ -1,9 +1,8 @@
 ﻿@model SalesWeb.Models.ViewsModels.SellerFormViewModel;
 @{
-    ViewData["Title"] = "Cadastrar";
+    ViewData["Title"] = "Cadastrar Vendedor";
 }
 <h2>@ViewData["Title"]</h2>
-<h4>Vendedor</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -32,9 +31,13 @@
                 <label asp-for="Seller.DepartmentId" class="control-label"></label>
                 <select asp-for="Seller.DepartmentId" asp-items="@(new SelectList(Model.Departments,"Id","Name"))" class="form-control"></select>
             </div>
-            
+            <br>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Cadastrar" class="btn btn-default" />
+            </div>
+            <br>
+            <div>
+                <a asp-action="Index">Voltar à lista</a>
             </div>
         </form>
     </div>

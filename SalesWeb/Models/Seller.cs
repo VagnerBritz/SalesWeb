@@ -14,8 +14,9 @@ namespace SalesWeb.Models
         public string Name { get; set; }
         [DataType(DataType.EmailAddress)]
         [Required(ErrorMessage ="{0} required")] // 0 pega o nome do atributo
+        [Display(Name ="E-mail")]
         public string Email { get; set; }
-        [Display(Name = "Aniversário")]
+        [Display(Name = "Data de Nascimento")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         [Required(ErrorMessage = "{0} required")]
@@ -24,7 +25,9 @@ namespace SalesWeb.Models
         [DisplayFormat(DataFormatString ="{0:F2}")]
         [Required(ErrorMessage = "{0} required")]
         public double BaseSalary { get; set; }
+        [Display(Name = "Departamento")]
         public Department Department { get; set; }
+        [Display(Name = "Departamento")]
         public int DepartmentId { get; set; }
         public ICollection<SalesRecord> Sales { get; set; } = new List<SalesRecord>();
 
